@@ -7,23 +7,24 @@ import { createStore } from "solid-js/store";
 import { isPermissionGranted, requestPermission, sendNotification } from "@tauri-apps/plugin-notification";
 
 function App() {
+  const [system, setSystem] = createStore<
+    Record<"platform" | "locale", null | string>
+  >({
+    platform: null,
+    locale: null,
+  });
   const [greetMsg, setGreetMsg] = createSignal("");
   const [name, setName] = createSignal("");
 
   onMount(async () => {
-    const [system, setSystem] = createStore<
-      Record<"platform" | "locale", null | string>
-    >({
-      platform: null,
-      locale: null,
-    });
     const plat = await platform();
     const loc = await locale();
 
-    // todo
     setSystem({ platform: plat, locale: loc });
 
+    // check if we can send
     const hasPermission = await isPermissionGranted();
+
     if (!hasPermission) {
       const permission = await requestPermission();
 
@@ -44,7 +45,7 @@ function App() {
         body: "This is a notification from JavaScript and Rust",
       });
     }
-  })
+  });
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
@@ -53,8 +54,9 @@ function App() {
 
   return (
     <div class="container">
-      <h1>
-        Hello
+       <h1>
+        <Show when={system.platform}>{(p) => <>{p} - </>}</Show>
+        <Show when={system.locale}>{(l) => <>{l} - </>}</Show>
       </h1>
       <div class="row">
         <a href="https://vitejs.dev" target="_blank">
