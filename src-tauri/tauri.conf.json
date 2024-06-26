@@ -26,7 +26,7 @@
       "endpoints": [
         "https://cdn.crabnebula.app/update/gnm-ws/tauri-ws/{{target}}-{{arch}}/{{current_version}}"
       ],
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhBQzZDMzNEQjUyRjg1RkQKUldUOWhTKzFQY1BHaW8zNHRHSnFURVRaRklWMktyT2ovZHFHZUFPcVhwMWtZUzZRbzd0Qjl3WTUK%"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhBQzZDMzNEQjUyRjg1RkQKUldUOWhTKzFQY1BHaW8zNHRHSnFURVRaRklWMktyT2ovZHFHZUFPcVhwMWtZUzZRbzd0Qjl3WTUK"
     }
   },
   "bundle": {
