@@ -19,6 +19,7 @@
     "os:allow-platform",
     "os:allow-locale",
     "notification:default",
-    "notification:allow-is-permission-granted"
+    "notification:allow-is-permission-granted",
+    "updater:default"
   ]
 }
