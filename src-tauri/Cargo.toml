@@ -22,3 +22,10 @@ serde_json = "1"
 tauri-plugin-os = "2.0.0-beta.6"
 tauri-plugin-notification = "2.0.0-beta.8"
 
+[profile.release]
+panic = "abort" # skip cleanup logic in production when panic
+codegen-units = 1 # may increase build time, but reduce binary size -- if build gets too long
+lto = true # enable link-time optimization
+opt-level = "s" # optimize for binary size -- first to check
+
+strip = true #  strip symbols from the binary
