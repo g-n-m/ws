@@ -20,6 +20,13 @@
     "os:allow-locale",
     "notification:default",
     "notification:allow-is-permission-granted",
-    "updater:default"
+    "updater:default",
+    "process:default",
+    "dialog:default",
+
+    "updater:allow-check",
+    "updater:allow-download-and-install",
+    
+    "process:allow-restart"
   ]
 }
